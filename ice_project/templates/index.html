@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+  {% block body %}
+
+<!--design -->
+<br><CENTER><H3>TYPES</H3></CENTER>
+<div class="container">
+    <div class="row">
+         {% for i in icecream_list %}
+        <div class="col-md-3">
+                <div class="card" style="width:280px">
+
+                      <img class="card-img-top" src="{{i.img.url}}" alt="Card image cap" height="200px">
+                      <div class="card-body">
+                           <h5 class="card-title">{{i.name}}</h5>
+                           <p class="card-text">{{i.desc}}</p>
+                           <a href="{%url 'ice_app:detail' i.id %}" class="btn btn-primary">detail</a>
+                      </div>
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+    </div>
+  {% endblock %}
